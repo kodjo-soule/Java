@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class ZCalculatrice {
     public static void main(String[] args) {
-        int som, add, sous, multi, diff;
+        int add, sous, multi, diff;
         int nbre1, nbre2;
         Scanner sc = new Scanner(System.in);
         char reponse = ' ', mode = ' ';
@@ -26,8 +26,8 @@ public class ZCalculatrice {
             nbre2 = sc.nextInt();
             if (mode == '1') {
                 System.out.println("***********Addition***********");
-                som = nbre1 + nbre2;
-                System.out.println(nbre1 + "+" + nbre2 + "=" + som);
+                add = nbre1 + nbre2;
+                System.out.println(nbre1 + "+" + nbre2 + "=" + add);
             }
             if (mode == '2') {
                 System.out.println("***********Soustration***********");
@@ -47,6 +47,7 @@ public class ZCalculatrice {
                 System.out.println(nbre1 + "/" + nbre2 + "=" + diff);
 
             }
+            // On vide la ligne
             sc.nextLine();
             do {
                 System.out.println("Souhaitez-vous continuez ? (O/N) : ");
@@ -56,6 +57,6 @@ public class ZCalculatrice {
             } while (reponse != 'O' && reponse != 'N');
             reponse = Character.toUpperCase(reponse);
         } while (reponse == 'O');
-        System.out.println("Revoir, a plus");
+        System.out.println("Au revoir, a plus");
     }
 }
