@@ -54,7 +54,8 @@ public class ZCalculatrice {
                 if (reponse != 'O' && reponse != 'N')
                     System.out.println("Choix non disponible ");
             } while (reponse != 'O' && reponse != 'N');
-
-        } while (true);
+            reponse = Character.toUpperCase(reponse);
+        } while (reponse == 'O');
+        System.out.println("Revoir, a plus");
     }
 }
