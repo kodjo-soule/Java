@@ -1,11 +1,11 @@
 public class Main{
     public static void main(String[] args){
-        Vehicle Vehicle = new Vehicle();
+        
         Vehicle electric = new ElectricVehicle();
         Vehicle hybrid = new HybridVehicle();
         //Calls
-        Vehicle.start();
-        Vehicle.resource();
+        // Vehicle.start();
+        // Vehicle.resource();
 
         electric.start();
         electric.resource();
@@ -14,13 +14,11 @@ public class Main{
         hybrid.resource();
     }
 }
-class Vehicle{
+abstract class Vehicle{
     public void start(){
         System.out.println("Starting") ;
     }
-    public void resource(){
-        System.out.println("I use petrol") ;
-    }
+    abstract void resource();
 }
 class ElectricVehicle extends Vehicle{
     public void resource(){
