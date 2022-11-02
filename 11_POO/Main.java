@@ -32,6 +32,11 @@ abstract class Vehicle{
         System.out.println("Starting") ;
     }
     abstract void resource();
+    public void difficulty(Difficulty difficulty){
+        switch(difficulty){
+            EASY : System.out.println("It is easy") ;break ;
+        }
+    }
     
 }
 class ElectricVehicle extends Vehicle{
@@ -44,6 +49,9 @@ class HybridVehicle extends Vehicle{
         System.out.println("I use both petrol and electricity") ;
     }
 }
-enum Color {
-    Red,Blue,Black
+//Enumeration
+enum Difficulty {
+    EASY,
+    MEDIUM,
+    HARD
 }
