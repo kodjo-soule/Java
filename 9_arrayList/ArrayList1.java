@@ -5,8 +5,8 @@ class ArrayList1{
         ArrayList<String> maListe = new ArrayList<String>();
         maListe.add("Element 1");
         maListe.add("Element 34");
-        maListe.add("Element 35");
-        
+        maListe.add("Element 35") ;
+         
         maListe.add("Element 2");
         maListe.add("Element 36");
         maListe.add("Element 37");
