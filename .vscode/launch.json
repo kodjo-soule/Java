@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "Java_5f6d4070"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "com.kodjo.Main",
+            "projectName": "Java_5f6d4070"
+        },
+        {
+            "type": "java",
             "name": "ArrayList1",
             "request": "launch",
             "mainClass": "ArrayList1",

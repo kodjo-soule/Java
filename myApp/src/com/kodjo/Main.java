@@ -1,11 +1,6 @@
 package com.kodjo;
-import java.awt.Color;
-
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 
-//Je suis le boos 
 
 public class Main {
 
@@ -19,10 +14,12 @@ public class Main {
 		//Fenetre fn = new Fenetre();
 //		Calculatrice calculatrice = new Calculatrice();
 		
-		ConnexionUI cn = new ConnexionUI();
-		cn.showME();
+		// ConnexionUI cn = new ConnexionUI();
+		// cn.showME();
 		//
-		String username = ""; // Le nom d'utilisateur saisi
+}
+public static void auth(){
+    String username = ""; // Le nom d'utilisateur saisi
         String password = ""; // Le mot de passe saisi
         boolean isAuthenticated = false; // Indique si l'utilisateur est authentifié
         
@@ -39,7 +36,6 @@ public class Main {
                 JOptionPane.showMessageDialog(null, "Nom d'utilisateur ou mot de passe invalide.", "Erreur d'authentification", JOptionPane.ERROR_MESSAGE);
             }
         }
-		
-	}
+    }
 
 }
