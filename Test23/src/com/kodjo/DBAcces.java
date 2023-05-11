@@ -37,4 +37,7 @@ public class DBAcces {
 			System.out.println("Erreur de la fermeture de la base de donnees : " + e.getMessage());
 		}
 	}
+	public Connection getConnection() throws SQLException {
+		return this.conn ;
+	}
 }
