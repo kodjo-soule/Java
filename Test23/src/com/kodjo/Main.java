@@ -5,11 +5,9 @@ package com.kodjo;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.swing.* ;
 import javax.swing.text.StyleConstants.ColorConstants;
 
@@ -55,7 +53,7 @@ enum Pays{
 		fenetre.add(panel);
 		//fenetre.setContentPane(panel);
 	}
-	public static void main(String[] args){
+	public static void main(String[] args) throws SQLException{
 //		creerFenetre();
 		
 //		Fenetre fn = new Fenetre();
@@ -65,7 +63,27 @@ enum Pays{
 		
 		AuthentificationUI authen = new AuthentificationUI();
 		authen.execute();
+//		
 		
+		
+		
+		
+	}
+	public static void main33(String[] args) throws SQLException {
+		//Test UserModel
+				//
+				String url = "jdbc:mysql://localhost:3306/myDb";
+			    String user = "root";
+			    String password = "root";
+			    User user01 = new User("ozo", "ozo");
+//				user01.presentME();
+				DBAcces db = new DBAcces(url, user, password);
+				db.connect();
+				UserModel userModel = new UserModel(db.getConnection() );
+				userModel.authenticate(user01);
+				db.disconnect();
+				
+				
 	}
 	public static void main2(String[] args) {
 		// TODO Auto-generated method stub

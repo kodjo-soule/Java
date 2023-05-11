@@ -8,6 +8,8 @@ import java.awt.HeadlessException;
 import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
+import java.util.List;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -23,6 +25,7 @@ public class AuthentificationUI extends JFrame implements ActionListener {
 	String url = "jdbc:mysql://localhost:3306/mydb";
     String user = "root";
     String password = "root";
+    UserModel userModel ;
 	//
 	//Les Composant
 	private JLabel loginLabel = new JLabel("Login", JLabel.RIGHT);
@@ -114,20 +117,35 @@ public class AuthentificationUI extends JFrame implements ActionListener {
 		if( arg0.getSource() == submitButton) {
 			String _login = (String) loginField.getText();
 			String _pass = (String) passwordField.getText();
+			User user1 = new User(_login, _pass);
+			User user2 = new User( "Robert", "Robert");
+			DBAcces db = new DBAcces(url,user, password);
 			if( _login.isEmpty() || _login.isEmpty()) {
 				JOptionPane.showMessageDialog(this, "Please complete the password and the login");
-			}else if ( _login.equals(_pass)) {
-				DBAcces db = new DBAcces(url,user, password);
-				
-				
-				if(db.connect()) {
-					JOptionPane.showMessageDialog(this, "Connexion a la base de donné reussie ");
-				}else {
-					JOptionPane.showMessageDialog(this, "Erreur de connexion a la base de donné");
+			}else if (db.connect()){
+				try {
+					UserModel userModel = new UserModel(db.getConnection());
+					if (userModel.authenticate(user1)) {
+						JOptionPane.showMessageDialog(this, "Authentication successful", "Authentification", JOptionPane.ERROR_MESSAGE);
+						
+						List<User> users = userModel.getAllUsers();
+						for(User user : users) {
+							user.presentME();
+						}
+						new Fenetre();
+						quitter();
+					}else {
+						JOptionPane.showMessageDialog(this  ,"Authentication error", "Authentification", JOptionPane.ERROR_MESSAGE);
+						
+					}
+					
+				}catch (Exception ex) {
+					
+				}finally {
+					
+					
 				}
-				db.disconnect();
-				new Fenetre();
-//				quitter();
+
 			}
 		}
 		

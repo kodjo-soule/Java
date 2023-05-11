@@ -33,4 +33,8 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	public void presentME() {
+		System.out.println("Username : " + username);
+		System.out.println("Password : " + password);
+	}
 }
