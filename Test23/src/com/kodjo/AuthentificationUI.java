@@ -117,8 +117,8 @@ public class AuthentificationUI extends JFrame implements ActionListener {
 		if( arg0.getSource() == submitButton) {
 			String _login = (String) loginField.getText();
 			String _pass = (String) passwordField.getText();
-			User user1 = new User(_login, _pass);
-			User user2 = new User( "Robert", "Robert");
+			Pharma user1 = new Pharma(_login, _pass);
+			Pharma user2 = new Pharma( "Robert", "Robert");
 			DBAcces db = new DBAcces(url,user, password);
 			if( _login.isEmpty() || _login.isEmpty()) {
 				JOptionPane.showMessageDialog(this, "Please complete the password and the login");
@@ -128,8 +128,8 @@ public class AuthentificationUI extends JFrame implements ActionListener {
 					if (userModel.authenticate(user1)) {
 						JOptionPane.showMessageDialog(this, "Authentication successful", "Authentification", JOptionPane.ERROR_MESSAGE);
 						
-						List<User> users = userModel.getAllUsers();
-						for(User user : users) {
+						List<Pharma> users = userModel.getAllUsers();
+						for(Pharma user : users) {
 							user.presentME();
 						}
 						new Fenetre();

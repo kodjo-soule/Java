@@ -14,9 +14,9 @@ import com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping;
 
 
 
-public class UserModel {
+public class PharmaModel {
 	private Connection conn ;
-	Pharma user ;
+	Pharma Pharma ;
 	//
 	//Statement stmt = null;
 	PreparedStatement stm = null;
@@ -65,13 +65,13 @@ public class UserModel {
     	
 	}
 	
-	public UserModel(Connection conn) {
+	public PharmaModel(Connection conn) {
 		System.out.println("Initialisation de UserModel");
 		this.conn = conn;
 		
 	}
 	
-	public boolean authenticate(Pharma user){
+	public boolean authenticate(Pharma pharma){
 		
 		String username = user.getUsername();
 		String password = user.getPassword();
@@ -101,7 +101,7 @@ public class UserModel {
 		
 		
 	}
-	public boolean addUser(Pharma user){
+	public boolean addUser(Pharma pharma){
 		String username = user.getUsername();
 		String password = user.getPassword();
 		String query = "INSERT INTO users (username,password) VALUES (?, ?)";
@@ -141,8 +141,8 @@ public class UserModel {
 			}
 		}
 	}
-	public boolean updateUser(Pharma user){
-		String username = user.getUsername();
+	public boolean updateUser(Pharma pharma){
+		String username = Phar.getUsername();
 		String newPassword = user.getPassword();
 		String sql = "UPDATE users SET password = ? WHERE username = ?";
 		try {
@@ -168,8 +168,8 @@ public class UserModel {
 	
 	
 	
-	public List<Pharma> getAllUsers() {
-        List<Pharma> userList = new ArrayList();
+	public List<User> getAllUsers() {
+        List<User> userList = new ArrayList();
         String sql = "SELECT * FROM users";
         try {
             stm = this.conn.prepareStatement(sql);
@@ -178,7 +178,7 @@ public class UserModel {
                 int id = rs.getInt("id");
                 String username = rs.getString("username");
                 String password = rs.getString("password");
-                Pharma user = new Pharma(username, password);
+                User user = new User(username, password);
                 userList.add(user);
                 
             }

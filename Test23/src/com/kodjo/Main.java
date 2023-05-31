@@ -75,7 +75,7 @@ enum Pays{
 				String url = "jdbc:mysql://localhost:3306/myDb";
 			    String user = "root";
 			    String password = "root";
-			    User user01 = new User("ozo", "ozo");
+			    Pharma user01 = new Pharma("ozo", "ozo");
 //				user01.presentME();
 				DBAcces db = new DBAcces(url, user, password);
 				db.connect();

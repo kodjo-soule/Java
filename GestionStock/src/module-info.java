@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author Kodjo
+ *
+ */
+module GestionStock {
+}

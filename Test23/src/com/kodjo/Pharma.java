@@ -1,16 +1,16 @@
 package com.kodjo;
 
-public class User {
+public class Pharma {
 	private int id ;
 	private String username;
 	private String password;
-	public User(int id, String username, String password) {
+	public Pharma(int id, String username, String password) {
 		super();
 		this.id = id;
 		this.username = username;
 		this.password = password;
 	}
-	public User(String username, String password) {
+	public Pharma(String username, String password) {
 		super();
 		this.username = username;
 		this.password = password;
