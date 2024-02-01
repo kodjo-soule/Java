@@ -1,20 +1,11 @@
 package com.app.personne;
 
-//
-//Application 1 – Création de la classe Personne
-// Attributs d’instance : nom (String), prenom(String), sexe(char) et
-//age(int)
-// Attributs de classes : nbPersonnes
-// Méthodes d’instance :
-// void sePresenter ()
-// Méthodes de classe :
-// int getNbPersonnes ()
-// Démo : Classe Application
 public abstract class Personne {
 	private String nom;
 	private String prenom;
 	private char sexe;
 	private int age;
+	//variable d'instance
 	private static int nbPersonnes = 0;
 	
 	
@@ -56,8 +47,14 @@ public abstract class Personne {
         this.nbPersonnes ++ ;;
 	}
 	
-	//methode abstract
-	public abstract void sePresenter() ;
+	//methode d'instance
+		public void sePresenter() {
+	        System.out.println(nom + " " + prenom);
+	        System.out.println("Age : " + age);
+	        System.out.println("Sexe : " + (sexe == 'F'? "Feminin" : "Masculin")
+	        );
+	        
+	    }
 	//Methode classes
 	public static int getNbPersonnes() {
         return nbPersonnes;

@@ -1,16 +1,20 @@
 package com.app.runtime;
 
-import com.app.personne.Personne;
 import com.app.personne.Etudiant;
 
-public abstract class Application {
+class Application {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		Etudiant etudiant = new Etudiant("Kodjo", "Souleymane", 'M', 30, 123456, "Management");
-		etudiant.sePresenter();
-
+		//Instanciation de l'etudiant'
+		Etudiant etudiant1 = new Etudiant("Kodjo", "Souleymane", 'M', 24, 123456, "M-ISI");
+		etudiant1.sePresenter();
+		System.out.println("----------------------------------------------------");
+		
+		//Nombre d'instance d'etudiant cree
+		System.out.println("Nombre d'instance d'Etudiants crees : " + Etudiant.getNbPersonnes());
+		
 	}
 
 }

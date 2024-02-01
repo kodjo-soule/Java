@@ -1,6 +1,4 @@
 package com.app.personne;
-//Créer une classe Etudiant (matricule (int), formation (String)) héritant
-//de la classe Personne
 
 public class Etudiant extends Personne {
 	private int matricule;
@@ -12,24 +10,23 @@ public class Etudiant extends Personne {
 		return formation;
 	}
 	public void setMatricule(int matricule) {
-		this.matricule = matricule;
+		if(matricule > 0) {
+			this.matricule = matricule;
+		}
 	}
 	public void setFormation(String formation) {
 		this.formation = formation;
 	}
 	public Etudiant(String nom, String prenom, char sexe, int age, int matricule, String formation) {
     	super(nom, prenom, sexe, age);
-        this.matricule = matricule;
+        this.setMatricule(matricule); 
         this.formation = formation;
     }
 	@Override
 	public void sePresenter() {
 		// TODO Auto-generated method stub
-        System.out.println("Etudiant " + this.getNom() + " " + this.getPrenom());
-        //age
-        System.out.println("Age : " + this.getAge());
-        //sexe
-        System.out.println("Sexe : " + this.getSexe());
+		System.out.println("***Etudiant***");
+		super.sePresenter();
         //matricule
         System.out.println("Matricule : " + this.getMatricule());
         //Formation

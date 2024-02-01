@@ -21,7 +21,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;
 
-public class MySQLConnectExample {
+public class MySQLConnectTableList {
     public static void main(String[] args) {
  
         // creates three different Connection objects
@@ -101,7 +101,11 @@ public class MySQLConnectExample {
                 		  {"Cysboy", new JButton("6boy"), new JComboBox(new String[]{"toto", "titi", "tata"}), new Boolean(true)},
                 		  {"BZHHydde", new JButton("BZH"), new JComboBox(new String[]{"toto", "titi", "tata"}), new Boolean(false)},
                 		  {"IamBow", new JButton("BoW"), new JComboBox(new String[]{"toto", "titi", "tata"}), new Boolean(false)},
+                		  {"FunMan", new JButton("Year"), new JComboBox(new String[]{"toto", "titi", "tata"}), new Boolean(true)},
+                		  {"FunMan", new JButton("Year"), new JComboBox(new String[]{"toto", "titi", "tata"}), new Boolean(true)},
+                		  {"FunMan", new JButton("Year"), new JComboBox(new String[]{"toto", "titi", "tata"}), new Boolean(true)},
                 		  {"FunMan", new JButton("Year"), new JComboBox(new String[]{"toto", "titi", "tata"}), new Boolean(true)}
+                		  
                 		};
                 DefaultTableModel model = new DefaultTableModel(data3, columns);
                 JTable table = new JTable(model);
